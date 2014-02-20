@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -56,6 +55,7 @@ public class Todo extends JFrame {
 		jmiUeber = new JMenuItem("Über");
 
 		jmenuDatei.add(jmiSpeichern);
+		jmenuDatei.addSeparator();
 		jmenuDatei.add(jmiBeenden);
 		jmenuHilfe.add(jmiUeber);
 		
@@ -132,7 +132,8 @@ public class Todo extends JFrame {
 	}
 	
 	private void beenden() {
-		int i = JOptionPane.showConfirmDialog(Todo.this, "Wollen Sie wirlich beenden?", "Beenden?", JOptionPane.YES_NO_OPTION);
+		int i = JOptionPane.showConfirmDialog(Todo.this,
+				"Wollen Sie wirlich beenden?", "Beenden?", JOptionPane.YES_NO_OPTION);
 		if (i==JOptionPane.YES_OPTION) {
 			System.exit(NORMAL);
 		}
